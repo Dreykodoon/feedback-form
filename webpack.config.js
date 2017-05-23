@@ -2,22 +2,16 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const extractCommons = new webpack.optimize.CommonsChunkPlugin({
-    name:     'commons',
-    filename: 'commons.js'
-});
-
 const extractCSS = new ExtractTextPlugin('[name].bundle.css');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry:   {
-        app:   './app.js',
-        admin: './admin.js',
+        index: './index.js',
     },
     output:  {
-        filename: '[name].bundle.js',
-        path:     path.resolve(__dirname, 'dist'),
+        filename:   '[name].bundle.js',
+        path:       path.resolve(__dirname, 'dist'),
         publicPath: '/dist/'
     },
     module:  {
@@ -30,7 +24,7 @@ module.exports = {
                         loader:  'babel-loader',
                         options: {
                             presets: [
-                                ['es2015', {modules: false}]
+                                ['es2015', 'react']
                             ]
                         }
                     }
@@ -49,9 +43,4 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        extractCSS,
-        extractCommons,
-        new webpack.NamedModulesPlugin(),
-    ],
 };
