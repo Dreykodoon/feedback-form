@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Title from './title';
 
+
 export default class Header extends React.Component {
     handleChange(e) {
         const title = e.target.value;

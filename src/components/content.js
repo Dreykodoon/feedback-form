@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {incrementCounter} from '../actions/counterActions';
+import imageUrl from '../dreyko.png';
 
 class Content extends React.Component {
     buttonClicked() {
@@ -13,6 +14,7 @@ class Content extends React.Component {
             {this.props.counter}
             <br/>
             <button type='button' onClick={this.buttonClicked.bind(this)}>{'Click me!'}</button>
+            <img src={imageUrl}/>
         </div>);
     }
 }
