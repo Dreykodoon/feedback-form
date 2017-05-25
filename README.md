@@ -1,6 +1,10 @@
 # feedback-form
 
-Were I left off:
+TODO:
+* Find a better project file structure;
+* Add react-bootstrap to the project;
+* Create the feedback form (just front-end logic);
+* Add unit tests;
 
 ## Examples
 
