@@ -6,7 +6,8 @@ import store from './store';
 import Home from './pages/home';
 import Contact from './pages/contact';
 
-const app = document.getElementById('app');
+const app = document.createElement('div');
+document.body.appendChild(app);
 
 ReactDOM.render(<Provider store={store}>
     <Router>

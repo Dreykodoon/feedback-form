@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const extractCSS = new ExtractTextPlugin('[name].bundle.css');
 
@@ -12,7 +13,6 @@ module.exports = {
     output:  {
         filename:   '[name].bundle.js',
         path:       path.resolve(__dirname, 'dist'),
-        publicPath: '/dist/'
     },
     module:  {
         rules: [
@@ -45,5 +45,6 @@ module.exports = {
     },
     plugins: [
         extractCSS,
+        new HtmlWebpackPlugin(),
     ],
 };
