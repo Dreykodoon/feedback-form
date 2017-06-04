@@ -1,7 +1,7 @@
 # feedback-form
 
 Backlog:
-* Add react-bootstrap to the project;
+* Add react-bootstrap + react-router-bootstrap to the project;
 * Create Nav Menu
 * Load source files into browser console
 * Create the feedback form (just front-end logic);
