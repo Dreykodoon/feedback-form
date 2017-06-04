@@ -1,9 +1,11 @@
 # feedback-form
 
 Backlog:
-* Add react-router
 * Add react-bootstrap to the project;
+* Create Nav Menu
+* Load source files into browser console
 * Create the feedback form (just front-end logic);
+* Make the website responsive (including for smartphone screens)
 * Add unit tests;
 
 ## Examples
@@ -19,4 +21,5 @@ Backlog:
 ## Useful links
 
 * webpack concepts: https://webpack.js.org/concepts/
+* react-router docs: https://reacttraining.com/react-router/web/example/basic
 * Hot reload not rebuilding: https://github.com/webpack/webpack-dev-server/issues/558
