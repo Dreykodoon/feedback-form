@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import store from './store';
-import Layout from './components/Layout';
+import Home from './pages/home';
 
 const app = document.getElementById('app');
 ReactDOM.render(<Provider store={store}>
-    <Layout/>
+    <Home/>
 </Provider>, app);
