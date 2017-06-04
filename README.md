@@ -1,6 +1,6 @@
 # feedback-form
 
-TODO:
+Backlog:
 * Add react-router
 * Add react-bootstrap to the project;
 * Create the feedback form (just front-end logic);

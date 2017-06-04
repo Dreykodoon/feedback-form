@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import {incrementCounter} from '../actions/counterActions';
 import imageUrl from '../dreyko.png';
 
@@ -15,6 +16,7 @@ class Content extends React.Component {
             <br/>
             <button type='button' onClick={this.buttonClicked.bind(this)}>{'Click me!'}</button>
             <img src={imageUrl}/>
+            <Link to='/contact'>Go to Contact</Link>
         </div>);
     }
 }

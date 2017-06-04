@@ -1,8 +1,12 @@
 {
-  "name": "webpack-demo",
+  "name": "feedback-form",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dreykodoon/feedback-form.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --inline --hot --port 3000",
@@ -30,12 +34,14 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "history": "^4.6.1",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
+    "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0"
   }
