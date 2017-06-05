@@ -1,7 +1,7 @@
 import React from 'react';
-import Footer from './footer';
-import Content from './content';
+import PropTypes from 'prop-types';
 import Header from './header';
+import Footer from './footer';
 
 export default class Layout extends React.Component {
     constructor() {
@@ -19,9 +19,13 @@ export default class Layout extends React.Component {
         return (
             <div>
                 <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title}/>
-                <Content/>
+                {this.props.children}
                 <Footer />
             </div>
         );
     }
 }
+
+Layout.propTypes = {
+    children: PropTypes.any,
+};

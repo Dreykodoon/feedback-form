@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {LinkContainer} from 'react-router-bootstrap';
 import {Button} from 'react-bootstrap';
 import {incrementCounter} from '../actions/counterActions';
-import imageUrl from '../dreyko.png';
+import imageUrl from '../images/dreyko.png';
 
 class Content extends React.Component {
     buttonClicked() {
