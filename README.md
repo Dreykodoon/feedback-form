@@ -1,10 +1,10 @@
 # feedback-form
 
 ## Backlog:
-* Add react-router-bootstrap to the project;
 * Create Nav Menu
 * Load source files into browser console
-* Create the feedback form (just front-end logic);
+* Create home page using Jumbotron component
+* Create the feedback form (just front-end logic)
 * Make the website responsive (including for smartphone screens)
 * Add unit tests;
 
