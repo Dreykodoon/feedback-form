@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import store from './store';
 import Home from './pages/home';
 import Contact from './pages/contact';
-import './style.scss';
+import './style/style.scss';
 
 const app = document.createElement('div');
 document.body.appendChild(app);
