@@ -1,6 +1,8 @@
 # feedback-form
 
 ## Backlog:
+* Remove react-bootstrap and react-router-bootstrap
+* Add Material-UI
 * Create Nav Menu
 * Load source files into browser console
 * Create home page using Jumbotron component
