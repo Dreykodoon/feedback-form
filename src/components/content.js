@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {LinkContainer} from 'react-router-bootstrap';
-import {Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import {incrementCounter} from '../actions/counterActions';
 import imageUrl from '../images/dreyko.png';
 
@@ -15,11 +14,9 @@ class Content extends React.Component {
         return (<div>
             {this.props.counter}
             <br/>
-            <Button onClick={this.buttonClicked.bind(this)}>{'Click me!'}</Button>
+            <button type='button' onClick={this.buttonClicked.bind(this)}>{'Click me!'}</button>
             <img src={imageUrl}/>
-            <LinkContainer to='/contact'>
-                <Button bsStyle='primary'>Go to Contact</Button>
-            </LinkContainer>
+            <Link to='/contact'>Go to Contact</Link>
         </div>);
     }
 }
