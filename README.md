@@ -18,6 +18,10 @@
 * Webpack: https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling
 
 ## Useful links
+* for adding Material-UI
+>* https://github.com/callemall/material-ui
+>* https://scotch.io/@micwanyoike/how-to-add-fonts-to-a-react-project
+>* https://fonts.google.com/specimen/Roboto
 * webpack concepts: https://webpack.js.org/concepts/
 * react-router docs: https://reacttraining.com/react-router/web/example/basic
 * react-bootstrap docs: https://react-bootstrap.github.io/components.html
