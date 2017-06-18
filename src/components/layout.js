@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './header';
 import Footer from './footer';
+import HeaderPlaceholder from './header-placeholder';
+
+const styles = {
+    layout: {
+        position: 'relative',
+    }
+};
 
 export default class Layout extends React.Component {
     constructor() {
@@ -17,8 +24,9 @@ export default class Layout extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={styles.layout}>
                 <Header/>
+                <HeaderPlaceholder/>
                 {this.props.children}
                 <Footer changeTitle={this.changeTitle.bind(this)} title={this.state.title}/>
             </div>
