@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import RaisedButton from 'material-ui/RaisedButton';
 import {incrementCounter} from '../actions/counterActions';
 import imageUrl from '../images/dreyko.png';
 
@@ -14,9 +15,11 @@ class Content extends React.Component {
         return (<div>
             {this.props.counter}
             <br/>
-            <button type='button' onClick={this.buttonClicked.bind(this)}>{'Click me!'}</button>
+            <RaisedButton label='Click me!' onClick={this.buttonClicked.bind(this)}></RaisedButton>
             <img src={imageUrl}/>
-            <Link to='/contact'>Go to Contact</Link>
+            <Link to='/contact'>
+                <RaisedButton label='Go to Contact' primary={true}></RaisedButton>
+            </Link>
         </div>);
     }
 }

@@ -75,6 +75,9 @@ module.exports = {
     },
     plugins: [
         extractCSS,
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'Feedback Form',
+            template: 'index.ejs',
+        }),
     ],
 };
