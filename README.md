@@ -20,8 +20,8 @@
 * Material-UI for React: http://www.material-ui.com
 * webpack concepts: https://webpack.js.org/concepts/
 * react-router docs: https://reacttraining.com/react-router/web/example/basic
-* react-bootstrap docs: https://react-bootstrap.github.io/components.html
 
 ## Solutions to problems
 * Hot reload not rebuilding: https://github.com/webpack/webpack-dev-server/issues/558
 * Possible problems with loading Bootstrap css: https://stackoverflow.com/questions/28223040/window-not-defined-error-when-using-extract-text-webpack-plugin-react
+* Absolute positioned elements are wider than the length of the screen: https://stackoverflow.com/questions/15763027/absolute-position-affects-width
