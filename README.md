@@ -1,7 +1,6 @@
 # feedback-form
 
 ## Backlog:
-* Add Material-UI
 * Create Nav Menu
 * Load source files into browser console
 * Create home page using Jumbotron component
@@ -18,10 +17,7 @@
 * Webpack: https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling
 
 ## Useful links
-* for adding Material-UI
->* https://github.com/callemall/material-ui
->* https://scotch.io/@micwanyoike/how-to-add-fonts-to-a-react-project
->* https://fonts.google.com/specimen/Roboto
+* Material-UI for React: http://www.material-ui.com
 * webpack concepts: https://webpack.js.org/concepts/
 * react-router docs: https://reacttraining.com/react-router/web/example/basic
 * react-bootstrap docs: https://react-bootstrap.github.io/components.html
