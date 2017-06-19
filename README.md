@@ -1,7 +1,7 @@
 # feedback-form
 
 ## Backlog:
-* Create Nav Menu
+* Fix redirecting to home page
 * Load source files into browser console
 * Create home page using Jumbotron component
 * Create the feedback form (just front-end logic)

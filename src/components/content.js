@@ -15,10 +15,10 @@ class Content extends React.Component {
         return (<div>
             {this.props.counter}
             <br/>
-            <RaisedButton label='Click me!' onClick={this.buttonClicked.bind(this)}></RaisedButton>
+            <RaisedButton label='Click me!' onClick={this.buttonClicked.bind(this)}/>
             <img src={imageUrl}/>
             <Link to='/contact'>
-                <RaisedButton label='Go to Contact' primary={true}></RaisedButton>
+                <RaisedButton label='Go to Contact' primary={true}/>
             </Link>
         </div>);
     }

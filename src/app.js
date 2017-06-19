@@ -7,14 +7,14 @@ import Layout from './components/layout';
 
 const App = () => (
     <MuiThemeProvider>
-        <Layout>
-            <Router>
+        <Router>
+            <Layout>
                 <div>
-                    <Route exact path="/" component={Home}/>
+                    <Route path="/home" component={Home}/>
                     <Route path="/contact" component={Contact}/>
                 </div>
-            </Router>
-        </Layout>
+            </Layout>
+        </Router>
     </MuiThemeProvider>
 );
 
