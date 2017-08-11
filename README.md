@@ -1,13 +1,5 @@
 # feedback-form
 
-## Backlog:
-* Fix redirecting to home page
-* Load source files into browser console
-* Create home page using Jumbotron component
-* Create the feedback form (just front-end logic)
-* Make the website responsive (including for smartphone screens)
-* Add unit tests;
-
 ## Examples
 * https://github.com/r-park/react-redux-seed
 * https://github.com/stowball/dummys-guide-to-redux-and-thunk-react
