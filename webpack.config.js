@@ -10,9 +10,10 @@ module.exports = {
     entry:   {
         index: './index.js',
     },
+    devtool: 'inline-source-map',
     output:  {
-        filename:   '[name].bundle.js',
-        path:       path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js',
+        path:     path.resolve(__dirname, 'dist'),
     },
     module:  {
         rules: [
@@ -34,32 +35,44 @@ module.exports = {
                 loader: extractCSS.extract(['css-loader', 'sass-loader'])
             }, {
                 test:   /\.css$/,
-                loader: extractCSS.extract({ fallback: 'style-loader', use: 'css-loader' })
+                loader: extractCSS.extract({
+                    fallback: 'style-loader',
+                    use:      'css-loader'
+                })
             }, {
                 test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [
+                use:  [
                     {
-                        loader: 'url-loader',
-                        options: {limit: 10000, mimetype: 'application/font-woff'},
+                        loader:  'url-loader',
+                        options: {
+                            limit:    10000,
+                            mimetype: 'application/font-woff'
+                        },
                     }
                 ],
             }, {
-                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
-                use: [
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                use:  [
                     {
-                        loader: 'url-loader',
-                        options: {limit: 10000, mimetype: 'application/octet-stream'},
+                        loader:  'url-loader',
+                        options: {
+                            limit:    10000,
+                            mimetype: 'application/octet-stream'
+                        },
                     }
                 ],
             }, {
-                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
+                test:   /\.eot(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader'
             }, {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                use: [
+                use:  [
                     {
-                        loader: 'url-loader',
-                        options: {limit: 10000, mimetype: 'image/svg+xml'},
+                        loader:  'url-loader',
+                        options: {
+                            limit:    10000,
+                            mimetype: 'image/svg+xml'
+                        },
                     }
                 ],
             }, {
@@ -74,9 +87,8 @@ module.exports = {
         ]
     },
     plugins: [
-        extractCSS,
-        new HtmlWebpackPlugin({
-            title: 'Feedback Form',
+        extractCSS, new HtmlWebpackPlugin({
+            title:    'Feedback Form',
             template: 'index.ejs',
         }),
     ],
