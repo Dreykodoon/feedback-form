@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --inline --hot --port 3000",
+    "start": "webpack -p && webpack-dev-server --inline --hot --port 3000",
+    "server": "node server/index.js",
     "build": "webpack -p"
   },
   "keywords": [],
