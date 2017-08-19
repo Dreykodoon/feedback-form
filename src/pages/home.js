@@ -1,6 +1,10 @@
 import React from 'react';
-import Content from '../components/content';
+import imageUrl from '../images/dreyko.png';
 
-const Home = () => (<Content/>);
+const Home = () => (
+    <div>
+        <img src={imageUrl}/>
+    </div>
+);
 
 export default Home;

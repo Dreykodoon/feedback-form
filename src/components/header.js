@@ -1,9 +1,7 @@
 import React from 'react';
-import Button from 'material-ui/Button';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
-import {NavLink} from 'react-router-dom';
 
 const styles = {
     header:    {
@@ -31,23 +29,11 @@ const styles = {
 };
 
 const Header = () => (
-    <AppBar style={styles.header} position="static">
+    <AppBar style={styles.header} position="absolute">
         <Toolbar>
             <Typography type="title" color="inherit">
                 Feedback Form
             </Typography>
-            <NavLink to='/home' style={styles.link} activeStyle={{
-                ...styles.link,
-                color: 'white'
-            }}>
-                <Button style={styles.button}>Home</Button>
-            </NavLink>
-            <NavLink to='/contact' style={styles.link} activeStyle={{
-                ...styles.link,
-                color: 'white'
-            }}>
-                <Button style={styles.button}>Contact</Button>
-            </NavLink>
         </Toolbar>
     </AppBar>
 );
