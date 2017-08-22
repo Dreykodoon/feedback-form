@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from 'material-ui/Typography';
+import Container from './container';
 
 export default class Footer extends React.Component {
     handleChange(e) {
@@ -11,10 +12,12 @@ export default class Footer extends React.Component {
     render() {
         return (
             <footer>
-                <Typography type="title">
-                    {this.props.title}
-                </Typography>
-                <input value={this.props.title} onChange={this.handleChange.bind(this)}/>
+                <Container>
+                    <Typography type="title">
+                        {this.props.title}
+                    </Typography>
+                    <input value={this.props.title} onChange={this.handleChange.bind(this)}/>
+                </Container>
             </footer>
         );
     }

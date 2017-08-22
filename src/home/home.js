@@ -1,10 +1,11 @@
 import React from 'react';
+import Container from '../layout/container';
 import imageUrl from '../images/dreyko.png';
 
 const Home = () => (
-    <div>
+    <Container>
         <img src={imageUrl}/>
-    </div>
+    </Container>
 );
 
 export default Home;
