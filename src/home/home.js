@@ -21,14 +21,13 @@ const styles = {
 const Home = () => (
     <Container>
         <Paper style={styles.body} elevation={1}>
-            <Grid style={{width: '45%'}}>
-                <Typography type='display3' component='h1'>
+            <Grid style={{width: '45%', alignContent: 'center'}} container align='center'>
+                <Typography style={{width: '100%'}} type='display3' component='h1' gutterBottom align='center'>
                     Feedback form
                 </Typography>
-                <Typography gutterBottom>
+                <Typography style={{textAlign: 'justify'}} component='p' gutterBottom>
                     {`
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      This application is a playground where I can test and learn new technologies.
                     `}
                 </Typography>
             </Grid>
