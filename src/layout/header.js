@@ -19,7 +19,6 @@ const Header = () => (
                 </Typography>
             </Toolbar>
         </Container>
-
     </AppBar>
 );
 

@@ -1,7 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from 'material-ui/Typography';
+import Toolbar from 'material-ui/Toolbar';
 import Container from './container';
+
+const styles = {
+    footer: {
+        backgroundColor: 'black',
+        color:           'white',
+    }
+};
 
 export default class Footer extends React.Component {
     handleChange(e) {
@@ -11,12 +19,14 @@ export default class Footer extends React.Component {
 
     render() {
         return (
-            <footer>
+            <footer style={styles.footer}>
                 <Container>
-                    <Typography type="title">
-                        {this.props.title}
-                    </Typography>
-                    <input value={this.props.title} onChange={this.handleChange.bind(this)}/>
+                    <Toolbar disableGutters>
+                        <Typography type='title' color='inherit'>
+                            {this.props.title}
+                        </Typography>
+                        <input value={this.props.title} onChange={this.handleChange.bind(this)}/>
+                    </Toolbar>
                 </Container>
             </footer>
         );
