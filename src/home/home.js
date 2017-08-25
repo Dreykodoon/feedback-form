@@ -2,7 +2,6 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Container from '../layout/container';
-import imageUrl from '../images/dreyko.png';
 
 const styles = {
     body: {
@@ -21,7 +20,6 @@ const Home = () => (
             <Typography type="headline" component="h3">
                 Feedback form
             </Typography>
-            <img src={imageUrl}/>
         </Paper>
     </Container>
 );

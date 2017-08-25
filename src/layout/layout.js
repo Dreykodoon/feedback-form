@@ -10,30 +10,17 @@ const styles = {
     }
 };
 
-export default class Layout extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            title: 'Footer',
-        };
-    }
-
-    changeTitle(title) {
-        this.setState({title});
-    }
-
-    render() {
-        return (
-            <div style={styles.layout}>
-                <Header/>
-                <HeaderPlaceholder/>
-                {this.props.children}
-                <Footer changeTitle={this.changeTitle.bind(this)} title={this.state.title}/>
-            </div>
-        );
-    }
-}
+const Layout = ({children}) => (
+    <div style={styles.layout}>
+        <Header/>
+        <HeaderPlaceholder/>
+        {children}
+        <Footer/>
+    </div>
+);
 
 Layout.propTypes = {
     children: PropTypes.any,
 };
+
+export default Layout;
