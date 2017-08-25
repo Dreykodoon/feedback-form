@@ -119,6 +119,7 @@
         "space-infix-ops": 2,
         "wrap-regex": 2,
 
+        "jsx-quotes": [2, "prefer-single"],
         "react/jsx-uses-vars": 2
     }
 }

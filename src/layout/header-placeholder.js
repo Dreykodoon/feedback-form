@@ -3,7 +3,7 @@ import React from 'react';
 const styles = {
     headerReplacement: {
         width: '100%',
-        height: 75,
+        height: 64,
     }
 };
 
