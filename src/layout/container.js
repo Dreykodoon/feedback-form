@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const styles = {
     container: {
-        marginLeft:  '15%',
-        marginRight: '15%',
+        display:        'flex',
+        justifyContent: 'center',
     }
 };
 

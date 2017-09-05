@@ -11,9 +11,9 @@ const styles = {
         paddingBottom:   16,
         paddingLeft:     32,
         paddingRight:    32,
+        margin:          16,
         backgroundColor: '#eee',
-        marginBottom:    16,
-        marginTop:       16,
+        maxWidth:        '1140px',
         display:         'flex',
     }
 };
@@ -25,9 +25,9 @@ const Home = () => (
                 <Typography style={{width: '100%'}} type='display3' component='h1' gutterBottom align='center'>
                     Feedback form
                 </Typography>
-                <Typography style={{textAlign: 'justify'}} component='p' gutterBottom>
+                <Typography style={{width: '100%'}} component='p' gutterBottom align='center'>
                     {`
-                      This application is a playground where I can test and learn new technologies.
+                      This application is a playground for testing and learning new technologies.
                     `}
                 </Typography>
             </Grid>

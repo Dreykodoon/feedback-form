@@ -14,7 +14,7 @@ const Header = () => (
     <AppBar style={styles.header}>
         <Container>
             <Toolbar disableGutters>
-                <Typography type="title" color="inherit">
+                <Typography type='title' color='inherit'>
                     Feedback Form
                 </Typography>
             </Toolbar>
