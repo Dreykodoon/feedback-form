@@ -13,7 +13,7 @@ const styles = {
 const Header = () => (
     <AppBar style={styles.header}>
         <Container>
-            <Toolbar disableGutters>
+            <Toolbar style={{justifyContent: 'flex-start', paddingLeft: 16}} disableGutters>
                 <Typography type='title' color='inherit'>
                     Feedback Form
                 </Typography>

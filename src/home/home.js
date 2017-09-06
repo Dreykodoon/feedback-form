@@ -2,26 +2,28 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
-import FeedbackForm from './feedback-form';
 import Container from '../layout/container';
+import FeedbackForm from './feedback-form';
 
 const styles = {
-    body: {
-        paddingTop:      16,
-        paddingBottom:   16,
-        paddingLeft:     32,
-        paddingRight:    32,
-        margin:          16,
+    body:          {
+        padding:         16,
+        marginTop:       16,
+        marginBottom:    16,
         backgroundColor: '#eee',
         maxWidth:        '1140px',
         display:         'flex',
+    },
+    leftContainer: {
+        width:        '45%',
+        alignContent: 'center',
     }
 };
 
 const Home = () => (
     <Container>
         <Paper style={styles.body} elevation={1}>
-            <Grid style={{width: '45%', alignContent: 'center'}} container align='center'>
+            <Grid style={styles.leftContainer} container align='center'>
                 <Typography style={{width: '100%'}} type='display3' component='h1' gutterBottom align='center'>
                     Feedback form
                 </Typography>
