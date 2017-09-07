@@ -7,13 +7,18 @@ import Container from './container';
 const styles = {
     header: {
         backgroundColor: 'black',
+        display:         'block',
+    },
+    headerToolbar: {
+        justifyContent: 'flex-start',
+        paddingLeft:    16,
     },
 };
 
 const Header = () => (
     <AppBar style={styles.header}>
         <Container>
-            <Toolbar style={{justifyContent: 'flex-start', paddingLeft: 16}} disableGutters>
+            <Toolbar style={styles.headerToolbar} disableGutters>
                 <Typography type='title' color='inherit'>
                     Feedback Form
                 </Typography>

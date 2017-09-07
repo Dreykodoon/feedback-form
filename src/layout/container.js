@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const styles = {
     container: {
-        width:  '1140px',
+        maxWidth:  '1140px',
         margin: 'auto'
     }
 };
