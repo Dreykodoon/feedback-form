@@ -14,8 +14,9 @@ const styles = {
         maxWidth:        '1140px',
         display:         'flex',
     },
-    leftContainer: {
-        width:        '45%',
+    leftContainer:           {
+        display:      'flex',
+        flexWrap:     'wrap',
         alignContent: 'center',
     }
 };
@@ -23,19 +24,21 @@ const styles = {
 const Home = () => (
     <Container>
         <Paper style={styles.body} elevation={1}>
-            <Grid style={styles.leftContainer} container align='center'>
-                <Typography style={{width: '100%'}} type='display3' component='h1' gutterBottom align='center'>
-                    Feedback form
-                </Typography>
-                <Typography style={{width: '100%'}} component='p' gutterBottom align='center'>
-                    {`
-                      This application is a playground for testing and learning new technologies.
-                    `}
-                </Typography>
-            </Grid>
-            <Grid style={{width: '10%'}}/>
-            <Grid style={{width: '45%'}}>
-                <FeedbackForm/>
+            <Grid container>
+                <Grid item xs={12} sm={6} style={styles.leftContainer}>
+                    <Typography style={{width: '100%'}} type='display3' component='h1' gutterBottom align='center'>
+                        Feedback form
+                    </Typography>
+                    <Typography style={{width: '100%'}} component='p' gutterBottom align='center'>
+                        {`
+                          This application is a playground for testing and learning new technologies.
+                        `}
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} sm={1}/>
+                <Grid item xs={12} sm={5}>
+                    <FeedbackForm/>
+                </Grid>
             </Grid>
         </Paper>
     </Container>
