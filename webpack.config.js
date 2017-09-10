@@ -23,6 +23,15 @@ module.exports = {
     module:  {
         rules: [
             {
+                test: /\.jsx?$/, // both .js and .jsx
+                loader: 'eslint-loader',
+                include: path.resolve(process.cwd(), 'src'),
+                enforce: 'pre',
+                options: {
+                    failOnError: true,
+                },
+            },
+            {
                 test:    /\.js$/,
                 include: path.resolve(__dirname, 'src'),
                 use:     [
