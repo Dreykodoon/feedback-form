@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Toolbar from 'material-ui/Toolbar';
 import Header from './header';
 import Footer from './footer';
-import HeaderPlaceholder from './header-placeholder';
 
 const styles = {
     layout: {
@@ -13,7 +13,7 @@ const styles = {
 const Layout = ({children}) => (
     <div style={styles.layout}>
         <Header/>
-        <HeaderPlaceholder/>
+        <Toolbar/>
         {children}
         <Footer/>
     </div>
