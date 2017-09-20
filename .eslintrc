@@ -12,7 +12,8 @@
         "es6": true
     },
     "globals": {
-        "module": true
+        "module": true,
+        "require": true
     },
     "plugins": [
       "react"
