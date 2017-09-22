@@ -10,7 +10,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -p && webpack-dev-server --inline --hot --port 3000",
-    "server": "nodemon --watch server server/index.js",
     "build": "webpack -p"
   },
   "keywords": [],
@@ -38,6 +37,7 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "history": "^4.6.1",
     "lodash": "^4.17.4",
     "material-ui": "^1.0.0-beta.11",
