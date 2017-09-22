@@ -3,10 +3,10 @@ import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import axios from 'axios';
 
-function sendEmail() {
+function sendTestData() {
     axios({
         method: 'post',
-        url:    '/test',
+        url:    '/app',
         data:   {
             test: 'test'
         }
@@ -19,7 +19,7 @@ const FeedbackForm = () => (
         <TextField label='Email' fullWidth margin='normal'/>
         <TextField label='Subject' fullWidth margin='normal'/>
         <TextField rows='5' rowsMax='5' label='Message' multiline fullWidth margin='normal'/>
-        <Button raised onClick={sendEmail}>Submit</Button>
+        <Button raised onClick={sendTestData}>Submit</Button>
     </div>
 );
 

@@ -19,6 +19,12 @@ module.exports = {
         historyApiFallback: {
             index: 'dist/index.html'
         },
+        proxy: {
+            '/app': {
+                target: 'http://localhost:8080',
+                secure: false
+            }
+        }
     },
     module:  {
         rules: [
