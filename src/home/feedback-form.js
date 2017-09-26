@@ -75,7 +75,7 @@ class FeedbackForm extends React.Component {
                 <Button raised onClick={this.sendTestData.bind(this)}>Submit</Button>
                 <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={this.state.snackbarOpen} onRequestClose={this.handleSnackbarClose.bind(this)}
                           SnackbarContentProps={{classes: {message: messageSent ? classes.snackbarMessageSuccess : classes.snackbarMessageFailure}}}
-                          message={snackbarMessage}/>
+                          message={snackbarMessage} autoHideDuration={5000}/>
             </div>
         );
     }
