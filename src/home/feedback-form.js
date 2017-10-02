@@ -24,14 +24,15 @@ class FeedbackForm extends React.Component {
         super();
 
         this.state = {
-            snackbarOpen: false,
+            snackbarOpen:    false,
             snackbarMessage: '',
-            messageSent: false,
-            formData: {
+            messageSent:     false,
+            formData:        {
                 name:    '',
                 email:   '',
                 subject: '',
                 message: '',
+                email2:  '',
             },
         };
     }
@@ -43,10 +44,18 @@ class FeedbackForm extends React.Component {
             data:   this.state.formData,
         })
             .then(() => {
-                this.setState({snackbarOpen: true, snackbarMessage: 'Message sent successfully!', messageSent: true});
+                this.setState({
+                    snackbarOpen:    true,
+                    snackbarMessage: 'Message sent successfully!',
+                    messageSent:     true
+                });
             })
             .catch(() => {
-                this.setState({snackbarOpen: true, snackbarMessage: 'Error when sending message. Please try again.', messageSent: false});
+                this.setState({
+                    snackbarOpen:    true,
+                    snackbarMessage: 'Error when sending message. Please try again.',
+                    messageSent:     false
+                });
             });
     }
 
@@ -70,10 +79,15 @@ class FeedbackForm extends React.Component {
             <div>
                 <TextField onChange={this.handleChange('name')} value={formData.name} label='Name' fullWidth margin='normal'/>
                 <TextField onChange={this.handleChange('email')} value={formData.email} label='Email' fullWidth margin='normal'/>
+                <TextField style={{display: 'none'}} onChange={this.handleChange('email2')} value={formData.email} label='Email2  ' fullWidth margin='normal'/>
                 <TextField onChange={this.handleChange('subject')} value={formData.subject} label='Subject' fullWidth margin='normal'/>
-                <TextField onChange={this.handleChange('message')} value={formData.message} rows='5' rowsMax='5' label='Message' multiline fullWidth margin='normal'/>
+                <TextField onChange={this.handleChange('message')} value={formData.message} rows='5' rowsMax='5' label='Message' multiline fullWidth
+                           margin='normal'/>
                 <Button raised onClick={this.sendTestData.bind(this)}>Submit</Button>
-                <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={this.state.snackbarOpen} onRequestClose={this.handleSnackbarClose.bind(this)}
+                <Snackbar anchorOrigin={{
+                    vertical:   'top',
+                    horizontal: 'center'
+                }} open={this.state.snackbarOpen} onRequestClose={this.handleSnackbarClose.bind(this)}
                           SnackbarContentProps={{classes: {message: messageSent ? classes.snackbarMessageSuccess : classes.snackbarMessageFailure}}}
                           message={snackbarMessage} autoHideDuration={5000}/>
             </div>
