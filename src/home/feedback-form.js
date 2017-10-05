@@ -7,13 +7,13 @@ import {withStyles} from 'material-ui/styles';
 import axios from 'axios';
 
 const styles = {
-    snackbarMessageSuccess: {
+    success: {
         color:     '#36bd5a',
         textAlign: 'center',
         width:     '100%',
     },
-    snackbarMessageFailure: {
-        color:     '#bd2c35',
+    failure: {
+        color:     '#d72c3a',
         textAlign: 'center',
         width:     '100%',
     },
@@ -24,39 +24,66 @@ class FeedbackForm extends React.Component {
         super();
 
         this.state = {
-            snackbarOpen:    false,
-            snackbarMessage: '',
-            messageSent:     false,
-            formData:        {
+            snackbarOpen:       false,
+            snackbarMessage:    '',
+            operationSucceeded: false,
+            formError:          false,
+            formData:           {
                 name:    '',
                 email:   '',
-                subject: '',
                 message: '',
                 email2:  '',
             },
         };
     }
 
-    sendTestData() {
-        axios({
-            method: 'post',
-            url:    '/app',
-            data:   this.state.formData,
-        })
-            .then(() => {
-                this.setState({
-                    snackbarOpen:    true,
-                    snackbarMessage: 'Message sent successfully!',
-                    messageSent:     true
-                });
-            })
-            .catch(() => {
-                this.setState({
-                    snackbarOpen:    true,
-                    snackbarMessage: 'Error when sending message. Please try again.',
-                    messageSent:     false
-                });
+    isFormValid() {
+        const {formData} = this.state;
+
+        return formData.name && formData.email && formData.message;
+    }
+
+    sendMessage() {
+        this.setState({formError: false});
+
+        if (this.isFormValid()) {
+            this.setState({
+                formData: {
+                    name:    '',
+                    email:   '',
+                    message: '',
+                    email2:  '',
+                }
             });
+
+            axios({
+                method: 'post',
+                url:    '/app',
+                data:   this.state.formData,
+            })
+                .then(() => {
+                    this.setState({
+                        snackbarOpen:       true,
+                        snackbarMessage:    'Message sent successfully!',
+                        operationSucceeded: true
+                    });
+                })
+                .catch(() => {
+                    this.setState({
+                        snackbarOpen:       true,
+                        snackbarMessage:    'Error when sending message. Please try again.',
+                        operationSucceeded: false
+                    });
+                });
+        }
+        else {
+            this.setState({
+                snackbarOpen:       true,
+                snackbarMessage:    'Please fill in all empty fields.',
+                operationSucceeded: false,
+                formError:          true,
+            });
+        }
     }
 
     handleChange(fieldName) {
@@ -72,23 +99,22 @@ class FeedbackForm extends React.Component {
     }
 
     render() {
-        const {formData, snackbarMessage, messageSent} = this.state;
+        const {formData, formError, snackbarMessage, operationSucceeded, snackbarOpen} = this.state;
         const {classes} = this.props;
 
         return (
             <div>
-                <TextField onChange={this.handleChange('name')} value={formData.name} label='Name' fullWidth margin='normal'/>
-                <TextField onChange={this.handleChange('email')} value={formData.email} label='Email' fullWidth margin='normal'/>
-                <TextField style={{display: 'none'}} onChange={this.handleChange('email2')} value={formData.email} label='Email2  ' fullWidth margin='normal'/>
-                <TextField onChange={this.handleChange('subject')} value={formData.subject} label='Subject' fullWidth margin='normal'/>
-                <TextField onChange={this.handleChange('message')} value={formData.message} rows='5' rowsMax='5' label='Message' multiline fullWidth
-                           margin='normal'/>
-                <Button raised onClick={this.sendTestData.bind(this)}>Submit</Button>
+                <TextField onChange={this.handleChange('name')} value={formData.name} label='* Name' fullWidth error={!formData.name && formError}/>
+                <TextField onChange={this.handleChange('email')} value={formData.email} label='* Email' fullWidth error={!formData.email && formError}/>
+                <TextField style={{display: 'none'}} onChange={this.handleChange('email2')} value={formData.email} label='* Email2' fullWidth/>
+                <TextField onChange={this.handleChange('message')} value={formData.message} rows='5' rowsMax='5' label='* Message' multiline fullWidth
+                           error={!formData.message && formError}/>
+                <Button raised onClick={this.sendMessage.bind(this)}>Submit</Button>
                 <Snackbar anchorOrigin={{
                     vertical:   'top',
                     horizontal: 'center'
-                }} open={this.state.snackbarOpen} onRequestClose={this.handleSnackbarClose.bind(this)}
-                          SnackbarContentProps={{classes: {message: messageSent ? classes.snackbarMessageSuccess : classes.snackbarMessageFailure}}}
+                }} open={snackbarOpen} onRequestClose={this.handleSnackbarClose.bind(this)}
+                          SnackbarContentProps={{classes: {message: operationSucceeded ? classes.success : classes.failure}}}
                           message={snackbarMessage} autoHideDuration={5000}/>
             </div>
         );
