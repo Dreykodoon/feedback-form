@@ -5,6 +5,8 @@ import Button from 'material-ui/Button';
 import Snackbar from 'material-ui/Snackbar';
 import {withStyles} from 'material-ui/styles';
 import axios from 'axios';
+import validator from 'validator';
+import {isFormValid, generateErrorMessage} from './feedback-form-validation';
 
 const styles = {
     success: {
@@ -37,18 +39,11 @@ class FeedbackForm extends React.Component {
         };
     }
 
-    isFormValid() {
-        const {formData} = this.state;
-
-        return formData.name && formData.email && formData.message;
-    }
-
     sendMessage() {
-        this.setState({formError: false});
-
-        if (this.isFormValid()) {
+        if (isFormValid(this.state.formData)) {
             this.setState({
-                formData: {
+                formError: false,
+                formData:  {
                     name:    '',
                     email:   '',
                     message: '',
@@ -79,7 +74,7 @@ class FeedbackForm extends React.Component {
         else {
             this.setState({
                 snackbarOpen:       true,
-                snackbarMessage:    'Please fill in all empty fields.',
+                snackbarMessage:    generateErrorMessage(this.state.formData),
                 operationSucceeded: false,
                 formError:          true,
             });
@@ -105,7 +100,8 @@ class FeedbackForm extends React.Component {
         return (
             <div>
                 <TextField onChange={this.handleChange('name')} value={formData.name} label='* Name' fullWidth error={!formData.name && formError}/>
-                <TextField onChange={this.handleChange('email')} value={formData.email} label='* Email' fullWidth error={!formData.email && formError}/>
+                <TextField onChange={this.handleChange('email')} value={formData.email} label='* Email' fullWidth
+                           error={(!formData.email || !validator.isEmail(formData.email)) && formError}/>
                 <TextField style={{display: 'none'}} onChange={this.handleChange('email2')} value={formData.email} label='* Email2' fullWidth/>
                 <TextField onChange={this.handleChange('message')} value={formData.message} rows='5' rowsMax='5' label='* Message' multiline fullWidth
                            error={!formData.message && formError}/>
