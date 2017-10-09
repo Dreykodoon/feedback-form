@@ -41,16 +41,6 @@ class FeedbackForm extends React.Component {
 
     sendMessage() {
         if (isFormValid(this.state.formData)) {
-            this.setState({
-                formError: false,
-                formData:  {
-                    name:    '',
-                    email:   '',
-                    message: '',
-                    email2:  '',
-                }
-            });
-
             axios({
                 method: 'post',
                 url:    '/app',
@@ -60,7 +50,14 @@ class FeedbackForm extends React.Component {
                     this.setState({
                         snackbarOpen:       true,
                         snackbarMessage:    'Message sent successfully!',
-                        operationSucceeded: true
+                        operationSucceeded: true,
+                        formError: false,
+                        formData:  {
+                            name:    '',
+                            email:   '',
+                            message: '',
+                            email2:  '',
+                        }
                     });
                 })
                 .catch(() => {
