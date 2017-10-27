@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import Snackbar from 'material-ui/Snackbar';
+import {CircularProgress} from 'material-ui/Progress';
 import {withStyles} from 'material-ui/styles';
 import axios from 'axios';
 import validator from 'validator';
@@ -18,6 +19,13 @@ const styles = {
         color:     '#d72c3a',
         textAlign: 'center',
         width:     '100%',
+    },
+    submitProgre: {
+        position:   'absolute',
+        top:        '50%',
+        left:       '50%',
+        marginTop:  -12,
+        marginLeft: -12,
     },
 };
 
@@ -106,7 +114,12 @@ class FeedbackForm extends React.Component {
                 <TextField style={{display: 'none'}} onChange={this.handleChange('email2')} value={formData.email} label='* Email2' fullWidth/>
                 <TextField onChange={this.handleChange('message')} value={formData.message} rows='5' rowsMax='5' label='* Message' multiline fullWidth
                            error={!formData.message && formError}/>
-                <Button raised onClick={this.sendMessage.bind(this)} disabled={submitDisabled}>Submit</Button>
+                <div style={{position: 'relative'}}>
+                    <Button raised onClick={this.sendMessage.bind(this)} disabled={submitDisabled}>
+                        Submit
+                        {submitDisabled && <CircularProgress size={24} className={classes.submitProgre}/>}
+                    </Button>
+                </div>
                 <Snackbar anchorOrigin={{
                     vertical:   'top',
                     horizontal: 'center'
