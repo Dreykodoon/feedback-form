@@ -6,7 +6,7 @@ import Snackbar from 'material-ui/Snackbar';
 import {withStyles} from 'material-ui/styles';
 import axios from 'axios';
 import validator from 'validator';
-import {isFormValid, generateErrorMessage} from './feedback-form-validation';
+import {generateErrorMessage, isFormValid} from './feedback-form-validation';
 
 const styles = {
     success: {
@@ -36,11 +36,13 @@ class FeedbackForm extends React.Component {
                 message: '',
                 email2:  '',
             },
+            submitDisabled:     false,
         };
     }
 
     sendMessage() {
         if (isFormValid(this.state.formData)) {
+            this.setState({submitDisabled: true});
             axios({
                 method: 'post',
                 url:    '/app',
@@ -51,20 +53,22 @@ class FeedbackForm extends React.Component {
                         snackbarOpen:       true,
                         snackbarMessage:    'Message sent successfully!',
                         operationSucceeded: true,
-                        formError: false,
-                        formData:  {
+                        formError:          false,
+                        formData:           {
                             name:    '',
                             email:   '',
                             message: '',
                             email2:  '',
-                        }
+                        },
+                        submitDisabled:     false,
                     });
                 })
                 .catch(() => {
                     this.setState({
                         snackbarOpen:       true,
                         snackbarMessage:    'Error when sending message. Please try again.',
-                        operationSucceeded: false
+                        operationSucceeded: false,
+                        submitDisabled:     false,
                     });
                 });
         }
@@ -91,7 +95,7 @@ class FeedbackForm extends React.Component {
     }
 
     render() {
-        const {formData, formError, snackbarMessage, operationSucceeded, snackbarOpen} = this.state;
+        const {submitDisabled, formData, formError, snackbarMessage, operationSucceeded, snackbarOpen} = this.state;
         const {classes} = this.props;
 
         return (
@@ -102,7 +106,7 @@ class FeedbackForm extends React.Component {
                 <TextField style={{display: 'none'}} onChange={this.handleChange('email2')} value={formData.email} label='* Email2' fullWidth/>
                 <TextField onChange={this.handleChange('message')} value={formData.message} rows='5' rowsMax='5' label='* Message' multiline fullWidth
                            error={!formData.message && formError}/>
-                <Button raised onClick={this.sendMessage.bind(this)}>Submit</Button>
+                <Button raised onClick={this.sendMessage.bind(this)} disabled={submitDisabled}>Submit</Button>
                 <Snackbar anchorOrigin={{
                     vertical:   'top',
                     horizontal: 'center'
