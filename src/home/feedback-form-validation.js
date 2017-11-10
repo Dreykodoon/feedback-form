@@ -1,7 +1,7 @@
 import validator from 'validator';
 
 export const EMPTY_FIELDS = 'Please fill in all empty fields';
-export const INVALID_EMAIL = 'Please add a valid email address';
+export const INVALID_EMAIL = 'Please enter a valid email address';
 
 /**
  * @param formData
