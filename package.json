@@ -10,12 +10,14 @@
   "scripts": {
     "test": "jest",
     "start": "webpack -p && webpack-dev-server --inline --hot --port 3000",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/react": "^3.2.15",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^21.2.0",
