@@ -53,7 +53,7 @@ class FeedbackForm extends React.Component {
             this.setState({submitDisabled: true});
             axios({
                 method: 'post',
-                url:    '/app',
+                url:    '/resources/email',
                 data:   this.state.formData,
             })
                 .then(() => {

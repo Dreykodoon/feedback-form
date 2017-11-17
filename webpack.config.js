@@ -20,7 +20,7 @@ module.exports = {
             index: 'dist/index.html'
         },
         proxy: {
-            '/app': {
+            '/resources': {
                 target: 'http://localhost:8080',
                 secure: false
             }
