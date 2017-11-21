@@ -9,8 +9,8 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "webpack -p && webpack-dev-server --inline --hot --port 3000",
-    "build": "webpack -p",
+    "start": "webpack -p --config webpack.dev.js && webpack-dev-server --config webpack.dev.js --inline --hot --port 3000",
+    "build": "webpack -p --config webpack.dev.js",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "keywords": [],
@@ -38,7 +38,8 @@
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.8",
     "webpack": "3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dev-server": "^2.9.4",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "axios": "^0.16.2",

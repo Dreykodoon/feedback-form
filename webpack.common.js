@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,22 +9,11 @@ module.exports = {
     entry:   {
         index: './index.js',
     },
-    devtool: 'inline-source-map',
     output:  {
         filename: '[name].bundle.js',
         path:     path.resolve(__dirname, 'dist'),
     },
-    devServer: {
-        historyApiFallback: {
-            index: 'dist/index.html'
-        },
-        proxy: {
-            '/resources': {
-                target: 'http://localhost:8080',
-                secure: false
-            }
-        }
-    },
+
     module:  {
         rules: [
             {
