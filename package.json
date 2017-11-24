@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest",
     "start": "webpack -p --config webpack.dev.js && webpack-dev-server --config webpack.dev.js --inline --hot --port 3000",
-    "build": "webpack -p --config webpack.dev.js",
+    "build": "webpack -p --config webpack.prod.js",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "keywords": [],
